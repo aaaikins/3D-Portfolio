@@ -1,6 +1,6 @@
-# 🚀 3D Developer Portfolio
+# 🚀 Aikins Acheampong - 3D Developer Portfolio
 
-A modern, animated 3D developer portfolio built with React, Three.js, TailwindCSS, and motion effects — designed to help you stand out and showcase your skills creatively.
+A modern, animated 3D developer portfolio showcasing my journey as a Computer Science student at Colby College. Built with React, Three.js, TailwindCSS, and motion effects to demonstrate my skills in full-stack development, AI engineering, and cloud computing.
 
 ![3d Portfolio Screenshot GitHub](https://github.com/user-attachments/assets/9b0ed20e-074e-4f2a-81d8-20c9da751e9e)
 
@@ -27,6 +27,8 @@ A modern, animated 3D developer portfolio built with React, Three.js, TailwindCS
 - 💌 Working contact form using **EmailJS**
 - 🧱 Beautiful UI enhancements with **Aceternity UI** and **Magic UI**
 - 🚀 Lightning-fast development with **Vite**
+- 🎓 Showcases real projects including AI-powered applications and full-stack solutions
+- ☁️ Highlights AWS certifications and cloud computing experience
 
 ---
 
@@ -69,8 +71,8 @@ A modern, animated 3D developer portfolio built with React, Three.js, TailwindCS
 ## 🚀 Getting Started
 1. Clone the Repository
 ```bash
-git clone https://github.com/Ali-Sanati/Portfolio.git
-cd Portfolio
+git clone https://github.com/aaaikins/3D-Portfolio.git
+cd 3D-Portfolio
 ```
 2. Install Dependencies
 ```bash
@@ -90,27 +92,21 @@ Assets used in the project can be found [here](https://github.com/user-attachmen
 ---
 
 ## 📬 Contact Me
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://www.instagram.com/ali.sanatidev/reels/) 
-[![Static Badge](https://img.shields.io/badge/Youtube-%23FF0033?style=flat&logo=youtube)](https://www.youtube.com/channel/UCZhtUWTtk3bGJiMPN9T4HWA)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ali-sanati/) 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/aikins-acheampong) 
+[![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white)](https://github.com/aaaikins)
+[![Email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:aaache27@colby.edu)
 
 ---
 
-## 💡 Suggestions or Feedback?
-Leave a comment on the [YouTube video](https://youtu.be/S9UQItTpwUQ) or open an issue here on GitHub.<br/>
-👉 What should I build next?
+## 🎓 About Me
+Computer Science student at Colby College (Class of 2027) with experience in:
+- **AI & Machine Learning**: OpenAI API integration, TensorFlow, AWS Bedrock
+- **Cloud Computing**: AWS Certified Cloud Practitioner & AI Practitioner
+- **Full-Stack Development**: React, Next.js, Node.js, Python, Flask
+- **Leadership**: Teaching Assistant, Team Lead for AI projects
 
-- A beautiful Landing Page
-
-- A complete E-commerce site
-
-- A fun App Clone (YouTube, Netflix, etc.)
-
-Or another interactive Portfolio
-
-Let me know!
-
----
-
-## ⭐ Like This Project?
-Star the repo and [subscribe](https://www.youtube.com/channel/UCZhtUWTtk3bGJiMPN9T4HWA??sub_confirmation=1) to the YouTube channel for more dev content!
+## 💡 Featured Projects
+- **AI-Powered PDF Assistant**: SaaS application with RAG pipeline
+- **Passport Pal**: AI travel assistant with real-time notifications  
+- **TrackFunds**: Full-stack MERN transaction tracker
+- **AI Resume Analyzer**: AWS serverless resume scoring tool
