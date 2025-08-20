@@ -110,80 +110,6 @@ export const myProjects = [
       },
     ],
   },
-  {
-    id: 4,
-    title: "Passport Pal",
-    description:
-      "An AI travel assistant utilizing OpenAI API, React.js, and FastAPI for personalized travel recommendations.",
-    subDescription: [
-      "Led a 3-person team to design and develop a comprehensive AI travel assistant application.",
-      "Integrated OpenAI API for intelligent travel recommendations and personalized trip planning.",
-      "Engineered a real-time notification system using AWS SNS to send personalized and timely travel reminders.",
-      "Implemented secure user authentication with Clerk, deployed frontend on Amazon Amplify, and hosted serverless backend on AWS Lambda.",
-    ],
-    href: "",
-    logo: "",
-    image: "/assets/projects/game-engine.jpg",
-    tags: [
-      {
-        id: 1,
-        name: "React",
-        path: "/assets/logos/react.svg",
-      },
-      {
-        id: 2,
-        name: "Python",
-        path: "/assets/logos/git.svg",
-      },
-      {
-        id: 3,
-        name: "AWS",
-        path: "/assets/logos/microsoft.svg",
-      },
-      {
-        id: 4,
-        name: "FastAPI",
-        path: "/assets/logos/javascript.svg",
-      },
-    ],
-  },
-  {
-    id: 5,
-    title: "Veritas Foundation Website",
-    description:
-      "Official website for Veritas Foundation Inc. built with Next.js and TypeScript, deployed on AWS Amplify.",
-    subDescription: [
-      "Led development of the organization's official website using modern Next.js framework with TypeScript for type safety.",
-      "Designed a scalable RESTful API with Express.js and hosted on AWS Lambda together with Amazon API Gateway.",
-      "Integrated an AI-powered chatbot using Amazon Bedrock, automating common inquiries and improving response times.",
-      "Implemented responsive design and optimized performance for enhanced user engagement.",
-    ],
-    href: "",
-    logo: "",
-    image: "/assets/projects/wordpress-theme.jpg",
-    tags: [
-      {
-        id: 1,
-        name: "Next.js",
-        path: "/assets/logos/react.svg",
-      },
-      {
-        id: 2,
-        name: "TypeScript",
-        path: "/assets/logos/javascript.svg",
-      },
-      {
-        id: 3,
-        name: "AWS",
-        path: "/assets/logos/microsoft.svg",
-      },
-      {
-        id: 4,
-        name: "TailwindCSS",
-        path: "/assets/logos/tailwindcss.svg",
-      },
-    ],
-  },
 ];
 
 export const mySocials = [
@@ -193,14 +119,14 @@ export const mySocials = [
     icon: "/assets/socials/github.svg",
   },
   {
-    name: "Linkedin",
+    name: "LinkedIn",
     href: "https://linkedin.com/in/aikins-acheampong",
     icon: "/assets/socials/linkedIn.svg",
   },
   {
-    name: "WhatsApp",
-    href: "",
-    icon: "/assets/socials/whatsApp.svg",
+    name: "Website",
+    href: "https://aikinsacheampong.com",
+    icon: "/assets/socials/github.svg", // Using GitHub icon as placeholder for website
   },
 ];
 
@@ -213,7 +139,6 @@ export const experiences = [
       "Led development of the organization's official website using Next.js and TypeScript and deployed on AWS Amplify.",
       "Designed a scalable RESTful API with Express.js and hosted on AWS Lambda together with Amazon API Gateway.",
       "Integrated an AI-powered chatbot using Amazon Bedrock, automating common inquiries and improving response times and user engagement.",
-      "Implemented modern web development practices and ensured high performance and scalability.",
     ],
   },
   {
@@ -224,7 +149,6 @@ export const experiences = [
       "Led a 3-person team to design Passport Pal, an AI travel assistant, utilizing OpenAI API, React.js, and FastAPI.",
       "Engineered a real-time notification system using AWS SNS to send personalized and timely travel reminders.",
       "Implemented user authentication with Clerk, deployed frontend on Amazon Amplify, hosted serverless backend on AWS Lambda.",
-      "Delivered a complete AI-powered solution that enhanced user experience through intelligent recommendations.",
     ],
   },
   {
@@ -232,10 +156,8 @@ export const experiences = [
     job: "Colby College, CS152",
     date: "February 2024 – December 2024",
     contents: [
-      "Assisted 50+ students in programming concepts in Python, leading to a 30% improvement in project scores during the Spring 2024 semester.",
-      "Provided hands-on technical support during computer lab sessions, debugging code and resolving software issues.",
-      "Enhanced learning efficiency through personalized guidance and mentorship of students in computer science fundamentals.",
-      "Collaborated with faculty to develop better teaching methodologies and learning resources.",
+      "Assisted 50+ students in programming concepts in Python, leading to a 30% improvement in project scores during the Spring 2024 semester compared to previous semesters.",
+      "Provided hands-on technical support during computer lab sessions, debugging code and resolving software issues to enhance learning efficiency.",
     ],
   },
 ];

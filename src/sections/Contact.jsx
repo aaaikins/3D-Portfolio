@@ -1,7 +1,10 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import Alert from "../components/Alert";
+import { motion } from "motion/react";
 import { Particles } from "../components/Particles";
+import Input, { EmailIcon, UserIcon, MessageIcon } from "../components/Input";
+import Button, { SendIcon } from "../components/Button";
+import { useNotifications } from "../components/Toast";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -9,26 +12,57 @@ const Contact = () => {
     message: "",
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [showAlert, setShowAlert] = useState(false);
-  const [alertType, setAlertType] = useState("success");
-  const [alertMessage, setAlertMessage] = useState("");
+  const [formErrors, setFormErrors] = useState({});
+  const notifications = useNotifications();
+  
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    
+    // Clear error when user starts typing
+    if (formErrors[name]) {
+      setFormErrors({ ...formErrors, [name]: '' });
+    }
   };
-  const showAlertMessage = (type, message) => {
-    setAlertType(type);
-    setAlertMessage(message);
-    setShowAlert(true);
-    setTimeout(() => {
-      setShowAlert(false);
-    }, 5000);
+
+  const validateForm = () => {
+    const errors = {};
+    
+    if (!formData.name.trim()) {
+      errors.name = 'Name is required';
+    } else if (formData.name.length < 2) {
+      errors.name = 'Name must be at least 2 characters';
+    }
+    
+    if (!formData.email.trim()) {
+      errors.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      errors.email = 'Please enter a valid email address';
+    }
+    
+    if (!formData.message.trim()) {
+      errors.message = 'Message is required';
+    } else if (formData.message.length < 10) {
+      errors.message = 'Message must be at least 10 characters';
+    }
+    
+    return errors;
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    const errors = validateForm();
+    if (Object.keys(errors).length > 0) {
+      setFormErrors(errors);
+      notifications.error("Please fix the errors in the form before submitting.");
+      return;
+    }
+    
     setIsLoading(true);
+    setFormErrors({});
 
     try {
-      console.log("From submitted:", formData);
+      // Form submitted successfully
       await emailjs.send(
         "service_79b0nyj",
         "template_17us8im",
@@ -43,11 +77,26 @@ const Contact = () => {
       );
       setIsLoading(false);
       setFormData({ name: "", email: "", message: "" });
-      showAlertMessage("success", "You message has been sent!");
+      notifications.success("Your message has been sent successfully! I'll get back to you soon.", {
+        action: {
+          label: "Send another",
+          handler: () => {
+            // Scroll back to form or do nothing since we're already here
+          }
+        }
+      });
     } catch (error) {
       setIsLoading(false);
-      console.log(error);
-      showAlertMessage("danger", "Somthing went wrong!");
+      console.error('Email send error:', error);
+      notifications.error("Something went wrong. Please try again or contact me directly at aaache27@colby.edu", {
+        action: {
+          label: "Copy email",
+          handler: () => {
+            navigator.clipboard.writeText("aaache27@colby.edu");
+            notifications.info("Email address copied to clipboard!");
+          }
+        }
+      });
     }
   };
   return (
@@ -59,74 +108,116 @@ const Contact = () => {
         color={"#ffffff"}
         refresh
       />
-      {showAlert && <Alert type={alertType} text={alertMessage} />}
-      <div className="flex flex-col items-center justify-center max-w-md p-5 mx-auto border border-white/10 rounded-2xl bg-primary">
-        <div className="flex flex-col items-start w-full gap-5 mb-10">
-          <h2 className="text-heading">Let's Talk</h2>
-          <p className="font-normal text-neutral-400">
+      
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="flex flex-col items-center justify-center max-w-lg mx-auto"
+      >
+        {/* Contact Header */}
+        <motion.div 
+          className="flex flex-col items-center text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+        >
+          <div className="flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r from-royal to-lavender mb-6 shadow-lg shadow-royal/25">
+            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+          </div>
+          <h2 className="text-4xl font-bold text-white mb-4">Let's Talk</h2>
+          <p className="text-neutral-400 text-lg leading-relaxed max-w-md">
             Whether you're looking to build a new website, improve your existing
             platform, or bring a unique project to life, I'm here to help.
             Let's connect and discuss how we can work together!
           </p>
-        </div>
-        <form className="w-full" onSubmit={handleSubmit}>
-          <div className="mb-5">
-            <label htmlFor="name" className="feild-label">
-              Full Name
-            </label>
-            <input
-              id="name"
+        </motion.div>
+
+        {/* Contact Form */}
+        <motion.div 
+          className="w-full p-8 border border-white/10 rounded-3xl bg-gradient-to-b from-white/5 to-transparent backdrop-blur-sm shadow-2xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+        >
+          <form className="w-full space-y-6" onSubmit={handleSubmit}>
+            <Input
+              label="Full Name"
               name="name"
               type="text"
-              className="field-input field-input-focus"
               placeholder="John Doe"
-              autoComplete="name"
               value={formData.name}
               onChange={handleChange}
+              error={formErrors.name}
               required
+              autoComplete="name"
+              leftIcon={<UserIcon />}
+              maxLength={50}
             />
-          </div>
-          <div className="mb-5">
-            <label htmlFor="email" className="feild-label">
-              Email
-            </label>
-            <input
-              id="email"
+
+            <Input
+              label="Email Address"
               name="email"
               type="email"
-              className="field-input field-input-focus"
-              placeholder="JohnDoe@email.com"
-              autoComplete="email"
+              placeholder="john@example.com"
               value={formData.email}
               onChange={handleChange}
+              error={formErrors.email}
               required
+              autoComplete="email"
+              leftIcon={<EmailIcon />}
             />
-          </div>
-          <div className="mb-5">
-            <label htmlFor="message" className="feild-label">
-              Message
-            </label>
-            <textarea
-              id="message"
+
+            <Input
+              label="Message"
               name="message"
-              type="text"
-              rows="4"
-              className="field-input field-input-focus"
-              placeholder="Share your thoughts..."
-              autoComplete="message"
+              type="textarea"
+              placeholder="Tell me about your project or how I can help you..."
               value={formData.message}
               onChange={handleChange}
+              error={formErrors.message}
               required
+              rows={5}
+              leftIcon={<MessageIcon />}
+              maxLength={1000}
+              helperText="Share your project details, timeline, or any questions you have."
             />
-          </div>
-          <button
-            type="submit"
-            className="w-full px-1 py-3 text-lg text-center rounded-md cursor-pointer bg-radial from-lavender to-royal hover-animation"
+
+            <Button
+              type="submit"
+              variant="primary"
+              size="lg"
+              loading={isLoading}
+              disabled={isLoading}
+              className="w-full"
+              rightIcon={!isLoading && <SendIcon />}
+              ariaLabel={isLoading ? "Sending your message..." : "Send your message"}
+            >
+              {isLoading ? "Sending Message..." : "Send Message"}
+            </Button>
+          </form>
+          
+          {/* Alternative contact info */}
+          <motion.div 
+            className="mt-8 pt-8 border-t border-white/10 text-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
           >
-            {!isLoading ? "Send" : "Sending..."}
-          </button>
-        </form>
-      </div>
+            <p className="text-sm text-neutral-400 mb-4">
+              Prefer to reach out directly?
+            </p>
+            <a 
+              href="mailto:aaache27@colby.edu"
+              className="inline-flex items-center gap-2 text-aqua hover:text-mint transition-colors duration-200 font-medium"
+            >
+              <EmailIcon className="w-4 h-4" />
+              aaache27@colby.edu
+            </a>
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

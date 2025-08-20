@@ -1,5 +1,6 @@
 import { FlipWords } from "./FlipWords";
 import { motion } from "motion/react";
+import ResumeDownload from "./ResumeDownload";
 
 const HeroText = () => {
   const words = ["Intelligent", "Scalable", "Modern"];
@@ -28,7 +29,7 @@ const HeroText = () => {
             animate="visible"
             transition={{ delay: 1.2 }}
           >
-            A CS Student <br /> Building
+            CS Student at Colby <br /> Building
           </motion.p>
           <motion.div
             variants={variants}
@@ -48,9 +49,18 @@ const HeroText = () => {
             animate="visible"
             transition={{ delay: 1.8 }}
           >
-            AI Solutions
+            Solutions
           </motion.p>
         </div>
+        <motion.div
+          variants={variants}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 2.1 }}
+          className="mt-8"
+        >
+          <ResumeDownload />
+        </motion.div>
       </div>
       {/* Mobile View */}
       <div className="flex- flex-col space-y-6 md:hidden">
@@ -91,9 +101,18 @@ const HeroText = () => {
             animate="visible"
             transition={{ delay: 1.8 }}
           >
-            AI Applications
+            Solutions
           </motion.p>
         </div>
+        <motion.div
+          variants={variants}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 2.1 }}
+          className="mt-8"
+        >
+          <ResumeDownload />
+        </motion.div>
       </div>
     </div>
   );

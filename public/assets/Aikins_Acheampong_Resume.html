@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aikins Acheampong - Resume</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: white;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        .contact-info {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        .section {
+            margin: 25px 0;
+        }
+        .section h2 {
+            color: #2c3e50;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #bdc3c7;
+            padding-bottom: 5px;
+        }
+        .experience-item, .project-item {
+            margin: 15px 0;
+        }
+        .job-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #34495e;
+        }
+        .company {
+            font-weight: bold;
+            color: #3498db;
+        }
+        .date {
+            float: right;
+            font-style: italic;
+            color: #7f8c8d;
+        }
+        .description {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+        .description li {
+            margin: 5px 0;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .skill-tag {
+            background: #3498db;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .education {
+            margin: 15px 0;
+        }
+        .education strong {
+            color: #2c3e50;
+        }
+        .activities li {
+            margin: 8px 0;
+        }
+        @media print {
+            body { 
+                margin: 0;
+                padding: 0;
+                background: white !important;
+                color: black !important;
+                font-size: 12pt;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0.5in;
+                max-width: none;
+                margin: 0;
+            }
+            .header {
+                page-break-after: avoid;
+                margin-bottom: 20px;
+            }
+            .section {
+                page-break-inside: avoid;
+                margin: 20px 0 15px 0;
+            }
+            .section h2 {
+                page-break-after: avoid;
+                color: #000 !important;
+                font-size: 14pt;
+                margin-bottom: 10px;
+            }
+            .experience-item, .project-item {
+                page-break-inside: avoid;
+                margin: 12px 0;
+            }
+            .job-title, .company {
+                color: #000 !important;
+            }
+            .date {
+                color: #333 !important;
+            }
+            .description {
+                margin: 6px 0;
+                padding-left: 15px;
+            }
+            /* Hide any background colors and gradients */
+            * {
+                background: white !important;
+                color: black !important;
+                text-shadow: none !important;
+                box-shadow: none !important;
+            }
+            .skill-tag {
+                border: 1px solid #333 !important;
+                background: white !important;
+                color: black !important;
+            }
+            /* Ensure page breaks */
+            @page {
+                margin: 0.5in;
+                size: letter;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AIKINS ACHEAMPONG</h1>
+            <div class="contact-info">
+                aaache27@colby.edu | aikinsacheampong.com | linkedin.com/in/aikins-acheampong | github.com/aaaikins
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>EDUCATION</h2>
+            <div class="education">
+                <strong>Colby College</strong> – Waterville, ME <span class="date">Graduating May 2027</span><br>
+                <strong>Major:</strong> Computer Science<br>
+                <strong>Relevant Coursework:</strong> Programming Languages, Cloud Computing, Software Engineering, Data Analysis and Visualization, Data Structures and Algorithms, Linear Algebra, Operating Systems, Databases, Deep Learning, Distributed Systems
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>TECHNICAL SKILLS</h2>
+            <p><strong>Programming Languages:</strong> Python, JavaScript/TypeScript, Java, C, SQL, Go</p>
+            <p><strong>Technologies:</strong> AWS, Flask, Node.js, Next.js, React.js, Tailwind CSS, REST APIs, MongoDB, TensorFlow, PostgreSQL</p>
+            <p><strong>Certifications:</strong> AWS Certified Cloud Practitioner, AWS Certified AI Practitioner</p>
+        </div>
+
+        <div class="section">
+            <h2>PROFESSIONAL EXPERIENCE</h2>
+            
+            <div class="experience-item">
+                <div class="job-title">Software Engineer</div>
+                <div class="company">Veritas Foundation Inc.</div>
+                <div class="date">June 2025 – Present</div>
+                <ul class="description">
+                    <li>Led development of the organization's official website using Next.js and TypeScript and deployed on AWS Amplify.</li>
+                    <li>Designed a scalable RESTful API with Express.js and hosted on AWS Lambda together with Amazon API Gateway.</li>
+                    <li>Integrated an AI-powered chatbot using Amazon Bedrock, automating common inquiries and improving response times and user engagement.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-title">AI Engineer Intern</div>
+                <div class="company">SureStart AI</div>
+                <div class="date">June 2024 – August 2024</div>
+                <ul class="description">
+                    <li>Led a 3-person team to design Passport Pal, an AI travel assistant, utilizing OpenAI API, React.js, and FastAPI.</li>
+                    <li>Engineered a real-time notification system using AWS SNS to send personalized and timely travel reminders.</li>
+                    <li>Implemented user authentication with Clerk, deployed frontend on Amazon Amplify, hosted serverless backend on AWS Lambda.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-title">Teaching Assistant</div>
+                <div class="company">Colby College, CS152</div>
+                <div class="date">February 2024 – December 2024</div>
+                <ul class="description">
+                    <li>Assisted 50+ students in programming concepts in Python, leading to a 30% improvement in project scores during the Spring 2024 semester compared to previous semesters.</li>
+                    <li>Provided hands-on technical support during computer lab sessions, debugging code and resolving software issues to enhance learning efficiency.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>PROJECTS</h2>
+            
+            <div class="project-item">
+                <div class="job-title">AI-Powered PDF Assistant</div>
+                <div style="font-style: italic; color: #7f8c8d;">chat-with-pdf-blond.vercel.app</div>
+                <ul class="description">
+                    <li>Developed a SaaS application enabling users to upload, view, and chat with PDF documents using Next.js with TypeScript.</li>
+                    <li>Built Retrieval-Augmented Generation (RAG) pipeline using LangChain, Pinecone vector database and OpenAI API for accurate document answers.</li>
+                    <li>Integrated AWS S3 for file storage and DynamoDB for user/file management to deliver a scalable, low-latency experience.</li>
+                    <li>Implemented Clerk authentication, Stripe subscriptions, and real-time streaming of AI responses using Server-Sent Events.</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="job-title">AI Resume Analyzer</div>
+                <div style="font-style: italic; color: #7f8c8d;">main.dws2b1a2xvqhb.amplifyapp.com</div>
+                <ul class="description">
+                    <li>Built an AI resume scoring tool using Amazon Comprehend and AWS serverless stack (S3, Lambda, API Gateway).</li>
+                    <li>Automated CI/CD pipeline using AWS Amplify and integrated Clerk authentication with dynamic React data visualizations.</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="job-title">TrackFunds</div>
+                <div style="font-style: italic; color: #7f8c8d;">github.com/aaaikins/track-funds</div>
+                <ul class="description">
+                    <li>Created a responsive transaction tracker with MongoDB, Express.js, React, and Node.js, supporting full CRUD operations.</li>
+                    <li>Added real-time updates and schema validation to ensure secure and reliable financial data storage.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>ACTIVITIES & LEADERSHIP</h2>
+            <ul class="activities">
+                <li><strong>Colorstack Community, Member:</strong> Promote academic & career success for Black and Latinx CS students.</li>
+                <li><strong>Amazon - Campus Prep Series, SDE Mentee:</strong> Engaged in hands-on cloud computing labs with Amazon Bedrock; Attended live resume reviews, interview prep, and networking sessions with Amazon engineers and recruiters.</li>
+                <li><strong>Nvidia - Summer Bridge Series, SWE Mentee:</strong> Completed NVIDIA Summer Bridge Program, gaining hands-on experience with NVIDIA technologies, AI fundamentals, and software engineering best practices.</li>
+                <li><strong>Codepath, Student (June 2024 – August 2024):</strong> Completed the technical interview prep course.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
