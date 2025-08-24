@@ -59,7 +59,7 @@ const HeroText = () => {
           transition={{ delay: 2.1 }}
           className="mt-8"
         >
-          <ResumeDownload />
+          {/* <ResumeDownload /> */}
         </motion.div>
       </div>
       {/* Mobile View */}
